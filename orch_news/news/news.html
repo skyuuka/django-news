@@ -5,12 +5,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>news</title>
-	<meta name="generator" content="TextMate http://macromates.com/">
-	<meta name="author" content="Amanjeev">
+	<meta name="author" content="AJ">
 	<!-- Date: 2010-11-14 -->
 </head>
 <body>
 	<h1>News from My Organization</h1>
-	<p>This is the news page</p>
+	<p>This is the news page where the news goes...</p>
+	{% for news_item in news_show %}
+		{{news_item.body}}
+	{% endfor %}
 </body>
 </html>
