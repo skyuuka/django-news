@@ -5,7 +5,7 @@ import datetime
 
 def all_news(request):
 	nows = datetime.datetime.now()
-	news_show = News.objects.exclude(unpublish_date__lt=nows).order_by('-order')
+	news_show = News.objects.exclude(publish_date__lte=nows, unpublish_date__lte=nows).exclude(publish_date__gte=nows, unpublish_date__gte=nows).order_by('-order')
 	"""
 	news_show = News.objects.filter(
 		publish_date = 

@@ -11,15 +11,13 @@
 	<h1>News from My Organization</h1>
 	<p>This is the news page where the news goes...</p>
 	{% for news_item in news_show %}
-		{% if news_item.publish_date <= nows and news_item.unpublish_date >= nows %}
 			{% if news_item.title %}
 				<h2>{{news_item.title}}</h2>
 			{% endif %}
-			<p>{{news_item.body}}</p>
-			<p>{{news_item.create_date}}</p>
-		{% endif %}
+			<p>{{news_item.body|safe}}</p>
+			<p style="font-size:12px;">Publish Date:{{news_item.publish_date}}</p>
+			<p style="font-size:12px;">UnPublish Date:{{news_item.unpublish_date}}</p>
 	{% endfor %}
 	<p>Right here, right now: {{nows}}</p>
-	<p>{% now "jS F Y H:i" %}</p> 
 </body>
 </html>
