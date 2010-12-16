@@ -1,1 +1,39 @@
-This is a README file, as the name suggests, Yo!
+----------------
+Django News App
+----------------
+
+This Django app that provides a simple news functionality for your website/project. 
+
+Features and Components:
+------------------------
+
+It provides with a 
+    1. News Heading:
+        The heading of the article. This can be empty.
+
+    2. News Body:
+        The news piece. This cannot be left blank.
+
+    3. Publish Date:
+        The date you want your news to show up. Can be left blank,
+
+    4. Unpublish Date:
+        The date you want your news article to stop showing on the page. Can be left blank,
+
+    5. Order:
+        Order of the post/news piece. This order will decide the order of your news articles. 
+        Cannot be left blank.
+
+The relationship between publish_date and unpublish_date is simple when both are present. When you leave one or both blank, then it goes something like this:
+
+    * if publish_date and unpublish_date are both None. => Show
+    * if publish_date is None and unpublish_date is > Now => show
+    * if unpublish_date is None and publish_date is < Now => show
+
+Niceties to have:
+-----------------
+
+    1. A check that deecides whether 'Order' should be used or publish_date or create_date or modified_date for ordering the news articles
+    2. Check to see if the ordering should be in ascending or descending order.
+    3. 
+
